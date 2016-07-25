@@ -1,6 +1,7 @@
 package com.flatironschool.javacs;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
@@ -60,8 +61,16 @@ public class WikiSearch {
 	 * @return New WikiSearch object.
 	 */
 	public WikiSearch or(WikiSearch that) {
-        // FILL THIS IN!
-		return null;
+		WikiSearch w = new WikiSearch(this.map);
+		for (Map.Entry<String, Integer> e : that.map.entrySet()) {
+			//if this map contains a key that that map contains
+			if (this.map.containsKey(e.getKey())) {
+				w.map.put(e.getKey(), w.map.get(e.getKey()) + that.map.get(e.getKey()));
+			} else { //otherwise, only that map contains the key. 
+				w.map.put(e.getKey(), that.map.get(e.getKey()));
+			}
+		}
+		return w;
 	}
 	
 	/**
@@ -71,8 +80,15 @@ public class WikiSearch {
 	 * @return New WikiSearch object.
 	 */
 	public WikiSearch and(WikiSearch that) {
-        // FILL THIS IN!
-		return null;
+		Map m = new HashMap();
+		for (Map.Entry<String, Integer> e : this.map.entrySet()) {
+			//if this map contains a key that that map contains
+			if (that.map.containsKey(e.getKey())) {
+				m.put(e.getKey(), this.map.get(e.getKey()) + that.map.get(e.getKey()));
+			}
+		}
+		WikiSearch w = new WikiSearch(m);
+		return w;
 	}
 	
 	/**
@@ -82,8 +98,15 @@ public class WikiSearch {
 	 * @return New WikiSearch object.
 	 */
 	public WikiSearch minus(WikiSearch that) {
-        // FILL THIS IN!
-		return null;
+		Map m = new HashMap();
+		for (Map.Entry<String, Integer> e : this.map.entrySet()) {
+			//if this map contains a key that that map contains
+			if (that.map.containsKey(e.getKey()) == false) {
+				m.put(e.getKey(), this.map.get(e.getKey())/* + that.map.get(e.getKey())*/);
+			}
+		}
+		WikiSearch w = new WikiSearch(m);
+		return w;
 	}
 	
 	/**
@@ -105,7 +128,30 @@ public class WikiSearch {
 	 */
 	public List<Entry<String, Integer>> sort() {
         // FILL THIS IN!
-		return null;
+        List l = new ArrayList<Entry<String, Integer>>();
+        for (Map.Entry<String, Integer> e : this.map.entrySet()) {
+        	//Entry<String, Integer> n = new Entry<String, Integer>(e.getKey(), e.getValue());
+        	l.add(e);
+        }
+       
+        
+        Comparator<Entry<String, Integer>> comparator = new Comparator<Entry<String, Integer>>() {
+            @Override
+            public int compare(Entry<String, Integer> e1, Entry<String, Integer> e2) {
+            	if (getRelevance(e1.getKey()) < getRelevance(e2.getKey())) {
+                    return -1;
+                }
+            	if (getRelevance(e2.getKey()) < getRelevance(e1.getKey())) {
+                    return 1;
+                }
+                return 0;
+            }
+        };
+        
+       Collections.sort(l);//, comparator);
+
+        // System.out.println("sorted = " + l);
+		return l;
 	}
 
 	/**
