@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="1" failures="0" hostname="Helens-MacBook-Air-3.local" name="com.flatironschool.javacs.WikiSearchTest" skipped="0" tests="4" time="0.17" timestamp="2016-07-25T09:29:42">
+<testsuite errors="0" failures="0" hostname="Helens-MacBook-Air-3.local" name="com.flatironschool.javacs.WikiSearchTest" skipped="0" tests="4" time="0.13" timestamp="2016-07-25T09:35:13">
   <properties>
     <property name="java.vendor" value="Oracle Corporation" />
-    <property name="env.JAVA_MAIN_CLASS_96482" value="org.apache.tools.ant.launch.Launcher" />
     <property name="env.__CHECKFIX1436934" value="1" />
     <property name="sun.java.launcher" value="SUN_STANDARD" />
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers" />
@@ -16,6 +15,7 @@
     <property name="java.vm.specification.vendor" value="Oracle Corporation" />
     <property name="ant.home" value="/usr/local/Cellar/ant/1.9.6/libexec" />
     <property name="java.runtime.version" value="1.8.0_74-b02" />
+    <property name="env.JAVA_MAIN_CLASS_96671" value="org.apache.tools.ant.launch.Launcher" />
     <property name="env.MY_RUBY_HOME" value="/Users/Helen/.rvm/rubies/ruby-2.3.0" />
     <property name="env.Apple_PubSub_Socket_Render" value="/tmp/launch-NljMNs/Render" />
     <property name="env.DISPLAY" value="/tmp/launch-ZPNC2R/org.macosforge.xquartz:0" />
@@ -80,7 +80,7 @@
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment" />
     <property name="java.class.path" value="/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/bin:/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/lib/jedis-2.8.0.jar:/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/lib/jsoup-1.8.3.jar:/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/lib/junit-4.12.jar:/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/lib/hamcrest-core-1.3.jar:/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/lib/hamcrest-library-1.3.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-launcher.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-junit.jar:/usr/local/Cellar/ant/1.9.6/libexec/lib/ant-junit4.jar" />
     <property name="ant.version" value="Apache Ant(TM) version 1.9.6 compiled on June 29 2015" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.WikiSearchTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junit/TEST-com.flatironschool.javacs.WikiSearchTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junitvmwatcher7001266027748160388.properties propsfile=/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junit3665398889555683919.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner com.flatironschool.javacs.WikiSearchTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false formatter=org.apache.tools.ant.taskdefs.optional.junit.OutErrSummaryJUnitResultFormatter showoutput=false outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=false formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junit/TEST-com.flatironschool.javacs.WikiSearchTest.xml formatter=org.apache.tools.ant.taskdefs.optional.junit.PlainJUnitResultFormatter crashfile=/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junitvmwatcher6998509268103174461.properties propsfile=/Users/Helen/github-basics/cs-application-retrieval-lab-codeU/javacs-lab12/junit4734713660685934800.properties" />
     <property name="env.TERM_SESSION_ID" value="46ECA2FB-E177-45B7-A56E-9EC309AB923C" />
     <property name="ant.file.type.JavaCS" value="file" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
@@ -109,18 +109,7 @@
   </properties>
   <testcase classname="com.flatironschool.javacs.WikiSearchTest" name="testAnd" time="0.007" />
   <testcase classname="com.flatironschool.javacs.WikiSearchTest" name="testMinus" time="0.0" />
-  <testcase classname="com.flatironschool.javacs.WikiSearchTest" name="testSort" time="0.01">
-    <error message="java.util.HashMap$Node cannot be cast to java.lang.Comparable" type="java.lang.ClassCastException">java.lang.ClassCastException: java.util.HashMap$Node cannot be cast to java.lang.Comparable
-	at java.util.ComparableTimSort.countRunAndMakeAscending(ComparableTimSort.java:320)
-	at java.util.ComparableTimSort.sort(ComparableTimSort.java:188)
-	at java.util.Arrays.sort(Arrays.java:1312)
-	at java.util.Arrays.sort(Arrays.java:1506)
-	at java.util.ArrayList.sort(ArrayList.java:1454)
-	at java.util.Collections.sort(Collections.java:141)
-	at com.flatironschool.javacs.WikiSearch.sort(WikiSearch.java:151)
-	at com.flatironschool.javacs.WikiSearchTest.testSort(WikiSearchTest.java:88)
-</error>
-  </testcase>
+  <testcase classname="com.flatironschool.javacs.WikiSearchTest" name="testSort" time="0.001" />
   <testcase classname="com.flatironschool.javacs.WikiSearchTest" name="testOr" time="0.0" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>

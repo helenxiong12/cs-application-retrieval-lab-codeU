@@ -127,14 +127,14 @@ public class WikiSearch {
 	 * @return List of entries with URL and relevance.
 	 */
 	public List<Entry<String, Integer>> sort() {
-        // FILL THIS IN!
-        List l = new ArrayList<Entry<String, Integer>>();
+ 
+        List<Entry<String, Integer>> l = new LinkedList<Entry<String, Integer>>(this.map.entrySet());
+        /*
         for (Map.Entry<String, Integer> e : this.map.entrySet()) {
         	//Entry<String, Integer> n = new Entry<String, Integer>(e.getKey(), e.getValue());
         	l.add(e);
         }
-       
-        
+        */
         Comparator<Entry<String, Integer>> comparator = new Comparator<Entry<String, Integer>>() {
             @Override
             public int compare(Entry<String, Integer> e1, Entry<String, Integer> e2) {
@@ -148,7 +148,7 @@ public class WikiSearch {
             }
         };
         
-       Collections.sort(l);//, comparator);
+       Collections.sort(l, comparator);
 
         // System.out.println("sorted = " + l);
 		return l;
